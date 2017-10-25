@@ -1,10 +1,17 @@
 <p>@Model["cuisine"].GetName()</p>
 
-@foreach (var task in @Model["restaurant"])
+
+@foreach (var restaurant in Model["restaurant"])
 {
-<p>@task.GetName()    @task.GetHours()</p>
+<p>@restaurant.GetName()</p>
+<p>@restaurant.GetHours()</p>
 }
 
+
+@* @foreach (var Cuisine in Model)
+{
+<p><a href="Categories/@Cuisine.GetId()">@Cuisine.GetName()</a></p>
+} *@
 
 
 <form action="/Tasks/Delete" method="post">

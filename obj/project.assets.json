@@ -9655,16 +9655,16 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Guest/Desktop/asd/ToDo.csproj",
+      "projectUniqueName": "/Users/Guest/Desktop/Restaurants/ToDo.csproj",
       "projectName": "ToDo",
-      "projectPath": "/Users/Guest/Desktop/asd/ToDo.csproj",
-      "outputPath": "/Users/Guest/Desktop/asd/obj/",
+      "projectPath": "/Users/Guest/Desktop/Restaurants/ToDo.csproj",
+      "outputPath": "/Users/Guest/Desktop/Restaurants/obj/",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
       ],
       "files": {
-        "lib/netcoreapp1.1/ToDo.dll": "/Users/Guest/Desktop/asd/bin/placeholder/netcoreapp1.1/ToDo.dll"
+        "lib/netcoreapp1.1/ToDo.dll": "/Users/Guest/Desktop/Restaurants/bin/placeholder/netcoreapp1.1/ToDo.dll"
       },
       "frameworks": {
         "netcoreapp1.1": {

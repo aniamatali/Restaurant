@@ -54,8 +54,8 @@ namespace ToDoList.Controllers
       [HttpPost("/Categories/{id}")]
       public ActionResult ResultTask2(int id)
       {
-        string restaurantDescription = Request.Form["inputRestaurant"];
-        Restaurant newRestaurant = new Restaurant(restaurantDescription,id,(Request.Form["inputHours"]));
+        string restaurantName = Request.Form["inputRestaurant"];
+        Restaurant newRestaurant = new Restaurant(restaurantName,id,(Request.Form["inputHours"]));
         newRestaurant.Save();
 
         Dictionary<string, object> model = new Dictionary<string, object>();
