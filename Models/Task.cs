@@ -183,6 +183,25 @@ namespace ToDoList.Models
             }
         }
 
+        public static void UpdateRestaurant(int id)
+        {
+            MySqlConnection conn = DB.Connection();
+            conn.Open();
+            var cmd = conn.CreateCommand() as MySqlCommand;
+            cmd.CommandText = @"UPDATE FROM restaurants WHERE cuisine_id = @id;";
+
+            MySqlParameter cuisineId = new MySqlParameter();
+            cuisineId.ParameterName = "@id";
+            cuisineId.Value = id;
+            cmd.Parameters.Add(cuisineId);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            if (conn != null)
+            {
+                conn.Dispose();
+            }
+        }
 
         public static List<Restaurant> GetAlphaList()
         {

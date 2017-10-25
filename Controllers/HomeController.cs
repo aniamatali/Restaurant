@@ -51,6 +51,7 @@ namespace ToDoList.Controllers
         return View(model);
       }
 
+
       [HttpPost("/Categories/{id}")]
       public ActionResult ResultTask2(int id)
       {
