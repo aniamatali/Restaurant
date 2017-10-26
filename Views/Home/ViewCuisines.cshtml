@@ -1,17 +1,17 @@
 @foreach (var Cuisine in Model)
 {
-<p><a href="Categories/@Cuisine.GetId()">@Cuisine.GetName()</a></p>
+<p><a href="Cuisines/@Cuisine.GetId()">@Cuisine.GetName()</a></p>
 }
 
 <br>
 
-<form action="/Categories" method="post">
+<form action="/Cuisines" method="post">
   <label for="inputCuisine">Add another Cuisine:</label>
   <input name="inputCuisine" class="form-control" id="inputCuisine">
   <button type="submit" class="btn btn-success">Go.</button>
 </form>
 
-<form action="/Categories/Delete" method="post">
+<form action="/Cuisines/Delete" method="post">
   <button type="submit" class="btn btn-success">Delete All Cuisines</button>
 </form>
 

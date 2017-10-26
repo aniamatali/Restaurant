@@ -14,22 +14,22 @@ namespace ToDoList.Controllers
         return View();
       }
 
-      [HttpGet("/Categories")]
+      [HttpGet("/Cuisines")]
       public ActionResult Results2()
       {
-        return View("Results",Cuisine.GetAll());
+        return View("ViewCuisines",Cuisine.GetAll());
       }
 
-      [HttpPost("/Categories")]
-      public ActionResult Results()
+      [HttpPost("/Cuisines")]
+      public ActionResult ViewCuisines()
       {
         Cuisine newCuisine = new Cuisine (Request.Form["inputCuisine"]);
         newCuisine.Save();
         return View (Cuisine.GetAll());
       }
 
-      [HttpGet("/Categories/{id}")]
-      public ActionResult ResultTask(int id)
+      [HttpGet("/Cuisines/{id}")]
+      public ActionResult RestaurantInfo(int id)
       {
         Dictionary<string, object> model = new Dictionary<string, object>();
         Cuisine selectedCuisine = Cuisine.Find(id);
@@ -40,8 +40,8 @@ namespace ToDoList.Controllers
 
       }
 
-      [HttpGet("/Categories/{id}/tasks/new")]
-      public ActionResult TaskForm(int id)
+      [HttpGet("/Cuisines/{id}/restaurants/new")]
+      public ActionResult AddRestaurantForm(int id)
       {
         Dictionary<string, object> model = new Dictionary<string, object>();
         Cuisine selectedCuisine = Cuisine.Find(id);
@@ -52,7 +52,7 @@ namespace ToDoList.Controllers
       }
 
 
-      [HttpPost("/Categories/{id}")]
+      [HttpPost("/Cuisines/{id}")]
       public ActionResult ResultTask2(int id)
       {
         string restaurantName = Request.Form["inputRestaurant"];
@@ -66,14 +66,14 @@ namespace ToDoList.Controllers
         model.Add("cuisine", selectedCuisine);
 
 
-        return View("ResultTask", model);
+        return View("RestaurantInfo", model);
       }
 
       [HttpPost("/Tasks/Delete")]
       public ActionResult DeletePage2()
       {
         Restaurant.DeleteAll();
-        return View();
+        return View("RemoveAllRestaurants");
       }
 
       [HttpPost("/Categories/{id}/Delete")]
@@ -81,21 +81,37 @@ namespace ToDoList.Controllers
       {
         Cuisine.DeleteCuisine(id);
         Restaurant.DeleteTasks(id);
-        return View("DeletePage3");
+        return View("RemoveThisCuisine");
       }
 
-      [HttpPost("/Categories/Delete")]
+      [HttpPost("/Cuisines/Delete")]
       public ActionResult DeletePage()
       {
+        Restaurant.DeleteAll();
         Cuisine.DeleteAll();
-        return View();
+        return View("RemoveAllCuisines");
       }
 
-      [HttpGet("/TaskList")]
+      [HttpGet("/RestaurantList")]
       public ActionResult AlphaList()
       {
         return View(Restaurant.GetAlphaList());
       }
+
+      [HttpGet("/Cuisines/{id}/update")]
+    public ActionResult RestaurantUpdate(int id)
+    {
+      Restaurant thisRestaurant = Restaurant.Find(id);
+      return View(thisRestaurant);
+    }
+
+    [HttpPost("/Cuisines/{id}/update")]
+    public ActionResult RestaurantEditConfirm(int id)
+    {
+      Restaurant thisRestaurant = Restaurant.Find(id);
+      thisRestaurant.UpdateRestaurantName(Request.Form["new-name"]);
+      return RedirectToAction("AlphaList");
+    }
 
     }
   }

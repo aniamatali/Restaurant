@@ -30,3 +30,12 @@
 /Users/Guest/Desktop/Restaurants/obj/Debug/netcoreapp1.1/ToDo.AssemblyInfo.cs
 /Users/Guest/Desktop/Restaurants/obj/Debug/netcoreapp1.1/ToDo.dll
 /Users/Guest/Desktop/Restaurants/obj/Debug/netcoreapp1.1/ToDo.pdb
+C:\users\isaac\desktop\restaurant\bin\Debug\netcoreapp1.1\ToDo.deps.json
+C:\users\isaac\desktop\restaurant\bin\Debug\netcoreapp1.1\ToDo.runtimeconfig.json
+C:\users\isaac\desktop\restaurant\bin\Debug\netcoreapp1.1\ToDo.runtimeconfig.dev.json
+C:\users\isaac\desktop\restaurant\bin\Debug\netcoreapp1.1\ToDo.dll
+C:\users\isaac\desktop\restaurant\bin\Debug\netcoreapp1.1\ToDo.pdb
+C:\users\isaac\desktop\restaurant\obj\Debug\netcoreapp1.1\ToDo.csproj.CoreCompileInputs.cache
+C:\users\isaac\desktop\restaurant\obj\Debug\netcoreapp1.1\ToDo.AssemblyInfo.cs
+C:\users\isaac\desktop\restaurant\obj\Debug\netcoreapp1.1\ToDo.dll
+C:\users\isaac\desktop\restaurant\obj\Debug\netcoreapp1.1\ToDo.pdb

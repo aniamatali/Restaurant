@@ -228,5 +228,32 @@ namespace ToDoList.Models
             return allRestaurants;
         }
 
+        public void UpdateRestaurantName(string newRestaurantName)
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"UPDATE restaurants SET name = @newRestaurantName WHERE id = @searchId;";
+
+      MySqlParameter searchId = new MySqlParameter();
+      searchId.ParameterName = "@searchId";
+      searchId.Value = _id;
+      cmd.Parameters.Add(searchId);
+
+      MySqlParameter restaurantName = new MySqlParameter();
+      restaurantName.ParameterName = "@newRestaurantName";
+      restaurantName.Value = newRestaurantName;
+      cmd.Parameters.Add(restaurantName);
+
+      cmd.ExecuteNonQuery();
+      _name = newRestaurantName;
+
+      conn.Close();
+      if (conn != null)
+      {
+          conn.Dispose();
+      }
+    }
+
     }
 }
